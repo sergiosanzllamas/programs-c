@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<string.h>
+#include<strings.h>
 
 #define N 0x26
 
@@ -14,7 +15,6 @@ int main(){
 
      printf("Nombre Ocupa: %lu bytes.\n", sizeof(nombre));
      printf("NombreOcupa: %Xh bytes.\n", (int) sizeof(nombre));
-     
      printf("Lista Ocupa: %lu bytes.\n", sizeof(lista));
      printf("Lista Ocupa:%lu celdas.\n", sizeof(lista) / sizeof(char));
      printf("%c", nombre[0]);
