@@ -2,29 +2,53 @@
 #include<stdlib.h>
 
 #define N 2
+void mete(int a[N][N]){
+    for(int f=0; f<N; f++){
+        for(int c=0; c<N; c++)
+
+            printf("%4i", a[f][c]);
+        printf("\n");
+    }
+    printf("\n");
+}
+
+void sca(int b[N][N]){
+    for(int f=0; f<N; f++){
+        for(int c=0; c<N; c++)
+            printf("%4i", b[f][c]);
+        printf("\n");
 
 
-int matrizA[N][N]{
-	{2,4},
-		{3,9}
-};                  
-int matrizB[N][N]{
-	{5,1},
-		{4,8}
-};
+    }
+    printf("\n");
+}
+
+
 int main(){
-	int r[N][N];
-	int f=0;
-	for(int i=0; i<N; i++){
-		for(int j=0; j<N; j++){
-			f=0;
-			for(int k=0; k<N; k++)
-				f+=matrizA[i][k]*matrizB[k][j];
-			r[i][j] =f;
-			printf("%4i", r[i][j]);
-		}
-		printf("\n");
+    int a[N][N]={
+        {1,1},
+            {1,1}
+    };                  
+    int b[N][N]={
+        {5,1},
+            {4,8}
+    };
 
-	}
-return EXIT_SUCCESS;
+    int r[N][N];
+
+    int f;
+    mete(a);
+    sca(b);
+    for(int i=0; i<N; i++){
+        for(int j=0; j<N; j++){
+            f=0;
+            for(int k=0; k<N; k++)
+                f+=a[i][k]*b[k][j];
+            r[i][j] =f;
+            printf("%4i", r[i][j]);
+        }
+        printf("\n");
+
+    }
+    return EXIT_SUCCESS;
 }
