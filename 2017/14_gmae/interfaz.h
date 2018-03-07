@@ -1,18 +1,18 @@
-#ifndef __INTERFAZ_h__
-#define __INTERFAZ_h__ 
+#ifndef __INTERFAZ_H__
+#define __INTERFAZ_H__ 
 
 
 #include "global.h"
 
 
-#ifdef __cpplusplus
+#ifdef __cplusplus
 extern "C" {
-
+#endif
     void pintar(int matriz[M][N]);
     void poblacion_inicial(int matriz[M][N]);
     void rellena(int matriz[M][N]);
 
-#ifdef __cpplusplus 
+#ifdef __cplusplus 
 }
 
 #endif
