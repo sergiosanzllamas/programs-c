@@ -9,12 +9,11 @@
 int main(){
 
     char frase[] = "pedro";
-    char let = frase;
     char *letra = frase;
     char reserva;
     int intentos = 0;
 
-    printf("_ _ _ _ _  %c\n ", let);
+    printf("_ _ _ _ _  %c\n ", reserva);
 
 
 
