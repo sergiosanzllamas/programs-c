@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#define N 2
+#define N 3
 void mete(int a[N][N]){
     for(int f=0; f<N; f++){
         for(int c=0; c<N; c++)
@@ -26,12 +26,12 @@ void sca(int b[N][N]){
 
 int main(){
     int a[N][N]={
-        {1,1},
-            {1,1}
+        {1,1,5},
+            {1,1,9}
     };                  
     int b[N][N]={
-        {5,1},
-            {4,8}
+        {5,1,2},
+            {4,8,0}
     };
 
     int r[N][N];

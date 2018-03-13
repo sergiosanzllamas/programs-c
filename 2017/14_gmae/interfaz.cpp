@@ -37,7 +37,7 @@ void rellena(int matriz[M][N]){
     int iniciales;
     int x, y;
     system("clear");
-    printf("cuantos puntos iniciales quieres");
+    printf("cuantos puntos iniciales quieres: ");
     scanf(" %i", &iniciales);
 
     for(int n=0; n<iniciales; n++){
