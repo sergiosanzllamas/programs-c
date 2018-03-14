@@ -8,7 +8,7 @@ int main(){
         printf("dame un numero del 1 al 5: ");
         scanf(" %i", &opcion);
     }while(opcion <1 || opcion >5);
-    printf(" %i", opcion);
+    printf(" %i \n", opcion);
 
 	return EXIT_SUCCESS;
 }
