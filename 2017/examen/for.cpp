@@ -6,9 +6,9 @@ int main(){
     double b[N] = {3, 6, 2};
     double suma = 0;
     double mul;
-  
+
     for(int f=0; f<N; f++){
-         
+
         mul = a[f] * b[f];
 
         suma += mul; 
