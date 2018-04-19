@@ -11,7 +11,7 @@ struct Coordenada{
 void pinta(struct Coordenada lista[N]){
     clear();
     for(int i=0; i<N; i++)
-        mvprintw((int) lista[i].y % LINES, lista[i].x, "*");
+        mvprintw((int) lista[i].y % LINES, lista[i].x, "*``");
     refresh();
 }
 void actualiza(struct Coordenada lista[N]){
