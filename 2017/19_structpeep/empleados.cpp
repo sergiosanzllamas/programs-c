@@ -22,7 +22,7 @@ void rellena(Empleado *nuevo){
 
 void pinta(Empleado empleado){
 	printf("\n------------\n"
-		"%s / %s [%.2lf$]\n",
+			"%s / %s [%.2lf$]\n",
 			empleado.nombre,
 			empleado.puesto,
 			empleado.salario);
@@ -31,7 +31,7 @@ void pinta(Empleado empleado){
 int main(){
 
 	Empleado *primer = NULL;
-
+	primer =(Empleado *) malloc(sizeof(Empleado));
 	rellena(primer);
 	pinta(*primer);
 
