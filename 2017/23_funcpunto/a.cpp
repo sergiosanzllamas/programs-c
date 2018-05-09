@@ -41,6 +41,7 @@ bool push(int dato, Pila *pila){
 }
 
 int pop(Pila *pila) {
+
     if (pila->cima == 0){
         error = 1;
         return 0;
@@ -60,13 +61,15 @@ int main(){
     Pila op, datos;
     double op1, op2;
     char opera;
+    double s; 
+   
     Operacion catalogo[] = {
         {"suma",  &sum},
         {"resta", &res},
         {"multiplicacion", &mul},
         {"division", &div}
     };
-for(int a=0; a<2; a++){
+for(int a=0; a<10; a++){
     printf("Operando 1: ");
     scanf(" %lf", &op1);
     printf("\n");
@@ -76,10 +79,11 @@ for(int a=0; a<2; a++){
     printf("\n");
     printf("Operando 2: ");
     scanf(" %lf", &op2);
+printf("el resultado es %.2lf", s);    
 
-printf("resultado es %.2lf:", )
     push(op2, &datos);
     push(op1, &datos);
+    
 }
     switch(opera) {
         case '+':
@@ -110,5 +114,6 @@ printf("resultado es %.2lf:", )
     
     pop(&op);
     pop(&datos);
+  
     return EXIT_SUCCESS;
 }
