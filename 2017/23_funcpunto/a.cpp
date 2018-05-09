@@ -66,7 +66,7 @@ int main(){
         {"multiplicacion", &mul},
         {"division", &div}
     };
-
+for(int a=0; a<2; a++){
     printf("Operando 1: ");
     scanf(" %lf", &op1);
     printf("\n");
@@ -77,9 +77,10 @@ int main(){
     printf("Operando 2: ");
     scanf(" %lf", &op2);
 
-
+printf("resultado es %.2lf:", )
     push(op2, &datos);
     push(op1, &datos);
+}
     switch(opera) {
         case '+':
             push(suma, &op);
@@ -105,7 +106,9 @@ int main(){
             break;
     }
 
+ 
+    
     pop(&op);
-  
+    pop(&datos);
     return EXIT_SUCCESS;
 }
