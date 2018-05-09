@@ -6,88 +6,106 @@
 
 int error = 0;
 const char *mssg[] = {
-	"Todo OK.",
-	"Pila vacía.",
-	"Pila llena."
+    "Todo OK.",
+    "Pila vacía.",
+    "Pila llena."
 };
 
 typedef struct {
-	char nombre[N];
-	double (*op)(double, double);
+    char nombre[N];
+    double (*op)(double, double);
 } Operacion;
 
 typedef struct {
-	int data[MAX];
-	int cima;
+    int data[MAX];
+    int cima;
 } Pila;
 
 
 enum {
-	suma,
-	resta,
-	multi,
-	division,
-	OPERA
+    suma,
+    resta,
+    multi,
+    division,
+    OPERA
 };
 
 bool push(int dato, Pila *pila){
-	if (pila->cima >= MAX){
-		error = 2;
-		return false;
-	}
-	error = 0;
-	pila->data[pila->cima++] = dato;
-	return true;
+    if (pila->cima >= MAX){
+        error = 2;
+        return false;
+    }
+    error = 0;
+    pila->data[pila->cima++] = dato;
+    return true;
 }
 
 int pop(Pila *pila) {
-	if (pila->cima == 0){
-		error = 1;
-		return 0;
-	}
-	error = 0;
-	return pila->data[--pila->cima];
+    if (pila->cima == 0){
+        error = 1;
+        return 0;
+    }
+    error = 0;
+    return pila->data[--pila->cima];
 }
 
-double sum(double op1, double op2) { return op1 + op2; }
+double sum(double op1, double op2) { return op1 + op2; 
+}
 double res(double op1, double op2) { return op1 - op2; }
 double mul(double op1, double op2) { return op1 * op2; }
 double div(double op1, double op2) { return op1 / op2; }
 
 int main(){
 
-	Pila op, datos;
-	double op1, op2;
-	char opera;
-	Operacion catalogo[] = {
-		{"suma",  &sum},
-		{"resta", &res},
-		{"multiplicacion", &mul},
-		{"division", &div}
-	};
+    Pila op, datos;
+    double op1, op2;
+    char opera;
+    Operacion catalogo[] = {
+        {"suma",  &sum},
+        {"resta", &res},
+        {"multiplicacion", &mul},
+        {"division", &div}
+    };
 
-	printf("Operacion: ");
-	scanf(" %lf %c %lf", &op1, &opera, &op2);
-	push(op2, &datos);
-	push(op1, &datos);
-	switch(opera) {
-		case '+':
-			push(suma, &op);
-			break;
-		case '-':
-			push(resta, &op);
-			break;
-		case '*':
-			push(multi, &op);
-			break;
-		case '/':
-			push(division, &op);
-			break;
-		default:
-			printf("+ - * /");
-			break;
-	}
+    printf("Operando 1: ");
+    scanf(" %lf", &op1);
+    printf("\n");
+    printf("Mete operador: ");
+    scanf(" %c", &opera);
 
-	free(*(op);
-	return EXIT_SUCCESS;
+    printf("\n");
+    printf("Operando 2: ");
+    scanf(" %lf", &op2);
+
+
+    push(op2, &datos);
+    push(op1, &datos);
+    switch(opera) {
+        case '+':
+            push(suma, &op);
+            printf("%.2lf\n", sum(op1, op2));
+            break;
+        case '-':
+            push(resta, &op);
+            printf("%.2lf\n", res(op1, op2));
+
+            break;
+        case '*':
+            push(multi, &op);
+            printf("%.2lf\n", mul(op1, op2));
+
+            break;
+        case '/':
+            push(division, &op);
+            printf("%.2lf\n", div(op1, op2));
+
+            break;
+        default:
+            printf("+ - * /");
+            break;
+    }
+
+    pop(&op);
+  
+    return EXIT_SUCCESS;
 }
