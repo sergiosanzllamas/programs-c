@@ -79,12 +79,12 @@ for(int a=0; a<10; a++){
     printf("\n");
     printf("Operando 2: ");
     scanf(" %lf", &op2);
-printf("el resultado es %.2lf", s);    
+  
 
     push(op2, &datos);
     push(op1, &datos);
     
-}
+
     switch(opera) {
         case '+':
             push(suma, &op);
@@ -109,11 +109,10 @@ printf("el resultado es %.2lf", s);
             printf("+ - * /");
             break;
     }
-
- 
     
     pop(&op);
-    pop(&datos);
-  
-    return EXIT_SUCCESS;
+}
+ pop(&datos);
+
+   return EXIT_SUCCESS;
 }
