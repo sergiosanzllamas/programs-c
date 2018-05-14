@@ -69,7 +69,7 @@ int main(){
         {"multiplicacion", &mul},
         {"division", &div}
     };
-for(int a=0; a<10; a++){
+for(int a=0; a<5; a++){
     printf("Operando 1: ");
     scanf(" %lf", &op1);
     printf("\n");
