@@ -6,6 +6,7 @@ int main(){
     libreta = fopen("57159-0.txt", "r");
     int contador;
     char caracter, letra;
+  
     printf("mete el caracter que quieres: ");
     scanf(" %c", &letra);
     do{ if(fgetc(libreta) == caracter)
