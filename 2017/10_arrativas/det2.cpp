@@ -36,4 +36,4 @@ resultado = a[0][0] * a[1][1] *a[2][2] +
 
 
         return EXIT_SUCCESS;
-}
+

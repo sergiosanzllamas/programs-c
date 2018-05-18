@@ -50,11 +50,11 @@ void actualizar(Sprite movil[N]){
 
 void pintar(Sprite dibu[N]){
     for(int i=0; i<N; i++){
-        mvprintw(LINES / 2 - dibu[i].pos.y, COLS / 2 + dibu[i].pos.x, "*");
+        mvprintw(LINES / 2 - dibu[i].pos.y, COLS / 2 + dibu[i].pos.x, "oscar");
     }
     attron(COLOR_PAIR(3));
     mvprintw( LINES / 2 - (dibu[0].pos.y + dibu[1].pos.y + dibu[3].pos.y ) / 3.,
-            COLS / 2 + (dibu[0].pos.x + dibu[1].pos.x + dibu[2].pos.x) / 3., "*" );
+            COLS / 2 + (dibu[0].pos.x + dibu[1].pos.x + dibu[2].pos.x) / 3., "oscar" );
     attron(COLOR_PAIR(1));
     refresh();
 }

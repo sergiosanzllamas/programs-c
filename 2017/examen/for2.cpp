@@ -2,12 +2,18 @@
 #include <stdlib.h>
 #define N 3
 int main(){
-double a[N] = {1,1,4};
-double b[N] = {2,3,5};
-double suma = 0;
-for(int c=0; c<N; c++){
-    suma += a[c] * b[c];
-}
-printf( "la suma es %lf\n", suma);
+
+    double a[N]={3,4,6};
+    double b[N]={4,7,9};
+    double suma = 0;
+    double mul;
+        for(int y=0; y<N; y++){
+
+mul = a[y] * b[y];
+suma *= mul; 
+
+        }
+          printf("La suma es %lf", suma);
+
 	return EXIT_SUCCESS;
 }
