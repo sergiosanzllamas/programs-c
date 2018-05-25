@@ -62,7 +62,7 @@ void show(DIBHeader dib){
 int main(){
     BMPHeader header;
     DIBHeader dib;
-    const char *filename = "a.bmp";
+    const char *filename = "yo.bmp";
     FILE *pbmp = NULL;
 
     if(!(pbmp = fopen(filename, "r"))){
