@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #pragma pack(1)
-#define BYTE uint8_t
-#define DWORD uint32_t
-#define LONG int32_t
-#define WORD uint16_t
+
 typedef struct{
     char signature[2];
     unsigned size;
@@ -24,33 +21,6 @@ typedef struct{
 
 }DIBHeader;
 
-typedef struct{
-    WORD bfType;
-    DWORD bfSize;
-    WORD bfReserved0;
-    WORD bfReserved1;
-    DWORD bfOffBits;
-}BITMAPFILEHEADER;
-
-typedef struct{
-    DWORD  biSize; 
-    LONG   biWidth; 
-    LONG   biHeight; 
-    WORD   biPlanes; 
-    WORD   biBitCount; 
-    DWORD  biCompression; 
-    DWORD  biSizeImage; 
-    LONG   biXPelsPerMeter; 
-    LONG   biYPelsPerMeter; 
-    DWORD  biClrUsed; 
-    DWORD  biClrImportant; 
-}BITMAPINFOHEADER;
-
-typedef struct{
-    BYTE  rgbtBlue;
-    BYTE  rgbtGreen;
-    BYTE  rgbtRed;
-}RGBTRIPLE;
 void show(BMPHeader header){
     printf("Signature:        %c%c\n", header.signature[0], header.signature[1]);
     printf("Tamaño:        %i\n", header.size);
@@ -88,10 +58,7 @@ void show(DIBHeader dib){
     printf("\n");
 
 }
-void show(BITMAPFILEHEADER file){
-    printf("tipo:");
-    for(int i=0; i<)
-}
+
 int main(){
     BMPHeader header;
     DIBHeader dib;
