@@ -29,41 +29,46 @@ int main(){
         //imagen[i].r = imagen[i].g = imagen[i].b = media;
 
         if(imagen[i].r > media){
-            imagen[i].b = 250;
-            imagen[i].r = 250;
-            imagen[i].g = 250;
-        }else
+            imagen[i].b = 255;
+            imagen[i].r = 255;
+            imagen[i].g = 255;
+        }
+        else{
             imagen[i].b = 0;
-        imagen[i].r = 0;
-        imagen[i].g = 0;
+            imagen[i].r = 0;
+            imagen[i].g = 0;
+        }
         if(imagen[i].g > media){
             imagen[i].b = 255;
             imagen[i].r = 255;
             imagen[i].g = 255;
-        }else
+        }
+        else{
             imagen[i].b = 0;
-        imagen[i].r = 0;
-        imagen[i].g = 0;
+            imagen[i].r = 0;
+            imagen[i].g = 0;}
+
         if(imagen[i].b > media){
             imagen[i].b = 255;
             imagen[i].r = 255;
             imagen[i].g = 255;
+
         }else
             imagen[i].b = 0;
         imagen[i].r = 0;
         imagen[i].g = 0;
+    
+}
 
-    }
+/* Escribir la imagen */
+if (!(pbmp = fopen(destin, "r+"))){
+    fprintf( stderr, "No hay imagen b.bmp de destino.\n"  );
+    return EXIT_FAILURE;
+}
+fseek(pbmp, header.bmp.data_offset, SEEK_SET);
+fwrite(imagen, sizeof(Color), pixels, pbmp);
+fclose(pbmp);
 
-    /* Escribir la imagen */
-    if (!(pbmp = fopen(destin, "r+"))){
-        fprintf( stderr, "No hay imagen b.bmp de destino.\n"  );
-        return EXIT_FAILURE;
-    }
-    fseek(pbmp, header.bmp.data_offset, SEEK_SET);
-    fwrite(imagen, sizeof(Color), pixels, pbmp);
-    fclose(pbmp);
-
-    return EXIT_SUCCESS;
+return EXIT_SUCCESS;
 }
 
