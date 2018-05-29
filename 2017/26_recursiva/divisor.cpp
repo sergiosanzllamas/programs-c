@@ -2,7 +2,7 @@
 #include <stdlib.h>
 bool tiene_un_divisor(int dividendo, int divisor){
 
-    if( divisor == 1 || dividendo < divisor)
+    if( divisor <= 1 || dividendo < divisor)
         return false;
     if(dividendo % divisor == 0)
         return true;
