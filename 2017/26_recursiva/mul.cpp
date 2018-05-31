@@ -1,23 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
-int suma(int divisores, int divisor){
-    int suma = 0;
-    
-    if(divisores <= 1) 
-        return suma;
-    if(divisores < divisor)
-      suma+=divisores;
+    int sumai = 0;
 
+int suma(int divisores, int divisor){
+    
+    if(divisores%divisor ==0){ 
+        
+sumai+=divisor;
+    if(divisor<=1)
+      return sumai;
+}
     return suma(divisores,divisor-1);
 }
 int main(){
-    int nuemero, subtotal;
-    printf("dame el divisor y  dividendo");
+    int numero, subtotal, divisor;
+    printf("dame el numero:");
     scanf(" %i", &numero);
+  divisor = numero-1;
+    subtotal = suma(numero,divisor);
 
-    subtotal = suma(divisores, numero);
 
-    suma(divisores, divisor-1);
+    printf("la suma es %i\n", subtotal);
 
 	return EXIT_SUCCESS;
 }
