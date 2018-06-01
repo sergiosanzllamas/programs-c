@@ -3,7 +3,7 @@
 int mul =1;
 
 int muli(int numero){
-        mul *= numero;
+    mul *= numero + 1 /numero-1;
     if(numero ==1){
 
         return mul;
