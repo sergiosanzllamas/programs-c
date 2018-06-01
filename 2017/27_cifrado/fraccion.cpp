@@ -3,8 +3,9 @@
 int mul =1;
 
 int muli(int numero){
+        mul *= numero;
     if(numero ==1){
-        mul * = numero;
+
         return mul;
         if(numero == 0)
             return 1;
@@ -22,7 +23,7 @@ int main(){
 
 
     mul = muli(numero);
-    printf("el factoirial es %i", mul);
+    printf("el factoirial es %i\n", mul);
 
 
 
